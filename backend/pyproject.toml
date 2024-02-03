@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "appname"
+version = "0.1.0"
+description = ""
+authors = ["Rafał Łazicki <rafal.lazicki99@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+openai = "^1.11.0"
+tiktoken = "^0.5.2"
+requests = "^2.31.0"
+django = "^5.0.1"
+celery = {extras = ["redis"], version = "^5.3.6"}
+langchain = "^0.1.5"
+uvicorn = "^0.27.0.post1"
+python-multipart = "^0.0.6"
+django-cors-headers = "^4.3.1"
+flower = "^2.0.1"
+django-environ = "^0.11.2"
+psycopg2-binary = "^2.9.9"
+djangorestframework = "^3.14.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.6.0"
+mypy = "^1.8.0"
+pylint = "^3.0.3"
+black = "^24.1.1"
+invoke = "^2.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pylint.messages_control]
+good-names = ["i", "j", "k", "_", "id", "up"]
+disable = [
+    "consider-using-generator",
+    "fixme",
+    "missing-docstring",
+    "missing-function-docstring",
+    "too-few-public-methods",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.isort]
+profile = "black"
+
+[tool.autoflake]
+remove_all_unused_imports = true
+remove_unused_variables = true
+remove_unused_variables_ignore = ["__init__.py"]
+remove_duplicate_keys = true
