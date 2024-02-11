@@ -26,7 +26,7 @@ repos:
             verbose: true
 
     - repo: https://github.com/psf/black
-      rev: 23.12.0
+      rev: 24.1.1
       hooks:
           - id: black
             verbose: true
