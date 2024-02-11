@@ -20,6 +20,7 @@ flower = "^2.0.1"
 django-environ = "^0.11.2"
 psycopg2-binary = "^2.9.9"
 djangorestframework = "^3.14.0"
+pylint-django = "^2.5.5"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.6.0"
@@ -33,6 +34,9 @@ invoke = "^2.2.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.pylint.MASTER]
+load-plugins = ["pylint_django"]
+django-settings-module = "appname.config.settings"
 
 [tool.pylint.messages_control]
 good-names = ["i", "j", "k", "_", "id", "up"]
